@@ -12,7 +12,12 @@ services:
       - app-network
 
   web:
-    build: .
+    build:
+      context: .
+      args:
+        SECRET_KEY: ${SECRET_KEY}
+        DEBUG: ${DEBUG}
+        DATABASE_URL: ${DATABASE_URL}
     command: gunicorn job_tracker.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app

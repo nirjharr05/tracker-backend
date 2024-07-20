@@ -1,4 +1,4 @@
-# docker-compose.prod.yml (for production)
+# docker-compose.prod.yml (for production)git push -u origin master
 services:
   db:
     image: postgres:13
